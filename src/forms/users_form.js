@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, FieldArray, reduxForm } from 'redux-form';
-import validateUserInput from '../util/validate_user_input';
+import validateUserInput from './validations/userEntryValidation';
 
 const formPlaceholderText = 'steamcommunity.com/...';
 
