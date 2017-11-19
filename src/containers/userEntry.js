@@ -1,13 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Page from '../components/page';
 import Banner from '../components/banner';
-import UsersForm from '../forms/users_form';
+import UsersForm from '../forms/enterUsersForm'
+
+import styles from './userEntry.css';
 
 const UserEntry = (props) => (
-  <div>
+  <Page>
     <Banner />
     <UsersForm />
-  </div>
+  </Page>
 );
 
 const mapStateToProps = (state) => {

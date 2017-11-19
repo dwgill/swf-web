@@ -1,0 +1,12 @@
+@value bulma 'bulma/css/bulma.css';
+
+.page {
+    composes: columns from bulma;
+    composes: is-centered from bulma;
+}
+
+.pageContent {
+    composes: column from bulma;
+    composes: is-two-thirds-tablet from bulma;
+    background-color: grey;
+}

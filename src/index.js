@@ -9,9 +9,8 @@ import {
   Switch
 } from 'react-router-dom';
 
-import 'normalize.css';
 
-import UserEntry from './containers/user_entry';
+import UserEntry from './containers/userEntry';
 import rootReducer from './reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

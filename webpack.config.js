@@ -4,6 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = [
   'axios',
+  'bulma',
+  'lodash',
+  'normalize.css',
+  'package.json',
   'react',
   'react-dom',
   'react-redux',
@@ -12,14 +16,12 @@ const VENDOR_LIBS = [
   'redux',
   'redux-form',
   'redux-thunk',
-  'lodash',
-  'normalize.css',
 ];
 
 module.exports = {
   entry: {
     bundle: path.join(__dirname, 'src/index.js'),
-    vendor: VENDOR_LIBS,
+    // vendor: VENDOR_LIBS,
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -42,7 +44,18 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
+              localIdentName: '[name]_[local]_[hash:base64:5]',
+              importLoaders: 1,
+            }
+          },
+          { // postcss
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: (loader) => [
+                require('autoprefixer')(),
+                require('postcss-icss-values')(),
+              ]
             }
           }
         ],
@@ -60,9 +73,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest'],
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+      // names: ['vendor', 'manifest'],
+    // }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/index.html'),
     })
