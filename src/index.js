@@ -8,6 +8,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+
 import 'normalize.css';
 
 import UserEntry from './containers/user_entry';
