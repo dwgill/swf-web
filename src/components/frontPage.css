@@ -1,0 +1,5 @@
+@value bulma 'bulma/css/bulma.css';
+
+.bigText {
+    composes: title from bulma;
+}

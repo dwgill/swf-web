@@ -3,15 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom';
 
-
-import UserEntry from './containers/userEntry';
 import rootReducer from './reducers';
+import App from './app';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -23,11 +17,7 @@ const store = createStore(rootReducer, composeEnhancers());
 
 ReactDOM.render((
   <Provider store={store}>
-    <Router>
-      <Switch>
-        <Route path="/" component={UserEntry}/>
-      </Switch>
-    </Router>
+    <App />
   </Provider>
 ), document.getElementById('app'));
 

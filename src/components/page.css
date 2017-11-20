@@ -1,12 +1,11 @@
 @value bulma 'bulma/css/bulma.css';
 
 .page {
-    composes: columns from bulma;
-    composes: is-centered from bulma;
+    composes: section from bulma;
 }
 
 .pageContent {
-    composes: column from bulma;
-    composes: is-two-thirds-tablet from bulma;
-    background-color: grey;
+    composes: container from bulma;
+    composes: is-widescreen from bulma;
 }
+

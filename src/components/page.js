@@ -1,13 +1,14 @@
 import React from 'react';
 
+import Header from './header';
 import styles from './page.css';
 
-const Page = (props) => (
-  <div className={styles.page} >
+const Page = ({ children }) => (
+  <section className={styles.page} >
     <div className={styles.pageContent}>
-      {props.children}
+      {children}
     </div>
-  </div>
+  </section>
 );
 
 export default Page;
