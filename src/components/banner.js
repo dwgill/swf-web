@@ -1,54 +1,53 @@
 import React from 'react';
 import classnames from 'classnames';
-
-import styles from './banner.css';
+import bulma from 'bulma/css/bulma.css';
 
 const colorClass = {
-  primary: styles.isPrimary,
-  link: styles.isLink,
-  info: styles.isInfo,
-  success: styles.isSuccess,
-  warning: styles.isWarning,
-  danger: styles.isDanger,
-  dark: styles.isDark,
-  light: styles.isLight,
+  primary: bulma.isPrimary,
+  link: bulma.isLink,
+  info: bulma.isInfo,
+  success: bulma.isSuccess,
+  warning: bulma.isWarning,
+  danger: bulma.isDanger,
+  dark: bulma.isDark,
+  light: bulma.isLight,
 }
 
 const sizeClass = {
-  medium: styles.isMedium,
-  large: styles.isLarge,
-  fullheight: styles.isFullHeight,
+  medium: bulma.isMedium,
+  large: bulma.isLarge,
+  fullheight: bulma.isFullheight,
 }
 
 const Banner = ({ children, type = '', size = 'small', bold, floatDown }) => {
   const bannerClasses = classnames(
-    styles.banner,
+    bulma.hero,
     colorClass[type.toLowerCase()],
     sizeClass[size.toLowerCase()],
-    bold ? styles.isBold : '',
+    bold ? bulma.isBold : '',
   );
 
   if (children.length >= 3) {
     const [headChild, bodyChild, footChild] = children;
     return (
       <section className={bannerClasses}>
-        <div className={styles.bannerHead}>{headChild}</div>
-        <div className={styles.bannerBody}>{bodyChild}</div>
-        <div className={styles.bannerFoot}>{footChild}</div>
+        <div className={bulma.heroHead}>{headChild}</div>
+        <div className={bulma.heroBody}>{bodyChild}</div>
+        <div className={bulma.heroFoot}>{footChild}</div>
       </section>
     );
   } else if (children.length == 2) {
     const [first, second] = children;
     return (
       <section className={bannerClasses}>
-        <div className={floatDown ? styles.bannerBody : styles.bannerHead}>{first}</div>
-        <div className={floatDown ? styles.bannerFoot : styles.bannerBody}>{second}</div>
+        <div className={floatDown ? bulma.heroBody : bulma.heroHead}>{first}</div>
+        <div className={floatDown ? bulma.heroFoot : bulma.heroBody}>{second}</div>
       </section>
     );
   } else {
     return (
       <section className={bannerClasses}>
-        <div className={styles.bannerBody}>{children}</div>
+        <div className={bulma.heroBody}>{children}</div>
       </section>
     );
   }

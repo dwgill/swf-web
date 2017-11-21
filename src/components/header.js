@@ -1,24 +1,23 @@
 import React from 'react';
 import classnames from  'classnames';
-
-import styles from './header.css';
+import bulma from 'bulma/css/bulma.css';
 
 const titles = {
-  1: (text) => <h1 className={styles.title1}>{text}</h1>,
-  2: (text) => <h2 className={styles.title2}>{text}</h2>,
-  3: (text) => <h3 className={styles.title3}>{text}</h3>,
-  4: (text) => <h4 className={styles.title4}>{text}</h4>,
-  5: (text) => <h5 className={styles.title5}>{text}</h5>,
-  6: (text) => <h6 className={styles.title6}>{text}</h6>,
+  1: (text) => <h1 className={classnames(bulma.title, bulma.is1)}>{text}</h1>,
+  2: (text) => <h2 className={classnames(bulma.title, bulma.is2)}>{text}</h2>,
+  3: (text) => <h3 className={classnames(bulma.title, bulma.is3)}>{text}</h3>,
+  4: (text) => <h4 className={classnames(bulma.title, bulma.is4)}>{text}</h4>,
+  5: (text) => <h5 className={classnames(bulma.title, bulma.is5)}>{text}</h5>,
+  6: (text) => <h6 className={classnames(bulma.title, bulma.is6)}>{text}</h6>,
 }
 
 const subtitles = {
-  1: (text) => <h1 className={styles.subtitle1}>{text}</h1>,
-  2: (text) => <h2 className={styles.subtitle2}>{text}</h2>,
-  3: (text) => <h3 className={styles.subtitle3}>{text}</h3>,
-  4: (text) => <h4 className={styles.subtitle4}>{text}</h4>,
-  5: (text) => <h5 className={styles.subtitle5}>{text}</h5>,
-  6: (text) => <h6 className={styles.subtitle6}>{text}</h6>,
+  1: (text) => <h1 className={classnames(bulma.subtitle, bulma.is1)}>{text}</h1>,
+  2: (text) => <h2 className={classnames(bulma.subtitle, bulma.is2)}>{text}</h2>,
+  3: (text) => <h3 className={classnames(bulma.subtitle, bulma.is3)}>{text}</h3>,
+  4: (text) => <h4 className={classnames(bulma.subtitle, bulma.is4)}>{text}</h4>,
+  5: (text) => <h5 className={classnames(bulma.subtitle, bulma.is5)}>{text}</h5>,
+  6: (text) => <h6 className={classnames(bulma.subtitle, bulma.is6)}>{text}</h6>,
 }
 
 const Header = ({titleText, subtitleText, size=3}) => {
