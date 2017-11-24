@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import UserEntryLayout from './userEntryLayout';
+import UserEntryLayout from './UserEntryLayout';
 
 const mapStateToProps = (state = {}) => {
   return {};

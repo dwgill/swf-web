@@ -1,4 +1,4 @@
-@value bulma 'bulma/css/bulma.css';
+@value bulma 'bulma.css';
 
 .page {
     composes: section from bulma;

@@ -1,5 +1,5 @@
 import React from 'react';
-import UserEntry from './containers/userEntry';
+import UserEntry from './containers/UserEntry';
 
 import {
   BrowserRouter as Router,

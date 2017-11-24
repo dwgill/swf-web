@@ -1,0 +1,7 @@
+.userEntryListItem:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.userEntryList {
+    margin-bottom: 0.75rem;
+}

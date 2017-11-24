@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from  'classnames';
-import bulma from 'bulma/css/bulma.css';
+import bulma from 'bulma.css';
 
 const titles = {
   1: (text) => <h1 className={classnames(bulma.title, bulma.is1)}>{text}</h1>,

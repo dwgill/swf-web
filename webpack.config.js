@@ -4,10 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = [
   'axios',
-  'bulma',
+  'bulma/css/bulma.css',
+  'classnames',
   'lodash',
-  'normalize.css',
-  'package.json',
   'react',
   'react-dom',
   'react-redux',
@@ -21,13 +20,14 @@ const VENDOR_LIBS = [
 module.exports = {
   entry: {
     bundle: path.join(__dirname, 'src/index.js'),
-    // vendor: VENDOR_LIBS,
+    vendor: VENDOR_LIBS,
   },
+
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[chunkhash].js',
-    // publicPath: path.join(__dirname, 'dist'),
   },
+
   module: {
     rules: [
       { // babel
@@ -74,14 +74,29 @@ module.exports = {
       }
     ]
   },
+
+  resolve: {
+    alias: {
+      ['bulma.css$']: 'bulma/css/bulma.css',
+    }
+  },
+
   plugins: [
-    // new webpack.optimize.CommonsChunkPlugin({
-      // names: ['vendor', 'manifest'],
-    // }),
+    // Vendor Libs Caching
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor'],
+      minChunks: Infinity,
+    }),
+    // Webpack Runtime Caching
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['manifest'],
+    }),
+    // Output index.html w/ refs to built chunks
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/index.html'),
     })
   ],
+
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: false,
