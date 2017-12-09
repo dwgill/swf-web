@@ -2,10 +2,6 @@ const steam_or_vanity_id_re = /^[A-Za-z0-9-_]+$/;
 const steam_community_re = /^(https?:\/\/)?steamcommunity.com\/(id\/[A-Za-z0-9-_]+|profiles\/[0-9]+)\/?$/;
 
 const noInput = users => {
-  // console.log({users});
-  // console.log(!users);
-  // console.log(!users.length);
-  // console.log(users.every(user => !user));
   if (!users || !users.length || users.every(user => !user)) {
     return { _error: 'At least one user required' };
   } else {
@@ -26,9 +22,8 @@ const invalidUserValue = user => {
   }
 };
 
-const userEntryValidation = values =>
-  console.log(noInput(values.users)) || {
-    users: noInput(values.users) || values.users.map(invalidUserValue),
-  };
+const userEntryValidation = values => ({
+  users: noInput(values.users) || values.users.map(invalidUserValue),
+});
 
 export default userEntryValidation;

@@ -19,12 +19,21 @@ const sizeClass = {
   fullheight: bulma.isFullheight,
 };
 
-const Banner = ({ children, type = '', size = 'small', bold, shiftDown }) => {
+const Banner = ({
+  children,
+  type = '',
+  size = 'small',
+  bold,
+  shiftDown,
+  className,
+}) => {
+  console.log(className);
   const bannerClasses = classnames(
     bulma.hero,
     colorClass[type.toLowerCase()],
     sizeClass[size.toLowerCase()],
-    bold ? bulma.isBold : ''
+    bold ? bulma.isBold : '',
+    className
   );
 
   if (children.length >= 3) {

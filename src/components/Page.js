@@ -2,15 +2,15 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './Page.css';
 
-const Page = ({ children, bgClassName = '', className = '' }) => (
+const Page = ({ children, className = '', contentClassName = '' }) => (
   <section
     className={classnames(
       styles.backgroundCommon,
-      bgClassName || styles.backgroundDefault
+      className || styles.backgroundDefault
     )}
   >
     <div
-      className={classnames(styles.pageCommon, className || styles.pageDefault)}
+      className={classnames(styles.pageCommon, contentClassName || styles.pageDefault)}
     >
       {children}
     </div>

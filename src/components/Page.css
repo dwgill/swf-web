@@ -1,6 +1,5 @@
 .backgroundCommon {
   composes: section from 'bulma.css';
-  min-height: 100vh;
 }
 
 .backgroundDefault {

@@ -113,4 +113,8 @@ module.exports = env => ({
     compress: false,
     port: 3000,
   },
+
+  devtool: { production: 'none', development: 'cheap-module-eval-source-map' }[
+    env.NODE_ENV
+  ],
 });
