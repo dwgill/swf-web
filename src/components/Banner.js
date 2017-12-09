@@ -19,7 +19,7 @@ const sizeClass = {
   fullheight: bulma.isFullheight,
 }
 
-const Banner = ({ children, type = '', size = 'small', bold, floatDown }) => {
+const Banner = ({ children, type = '', size = 'small', bold, shiftDown }) => {
   const bannerClasses = classnames(
     bulma.hero,
     colorClass[type.toLowerCase()],
@@ -40,8 +40,8 @@ const Banner = ({ children, type = '', size = 'small', bold, floatDown }) => {
     const [first, second] = children;
     return (
       <section className={bannerClasses}>
-        <div className={floatDown ? bulma.heroBody : bulma.heroHead}>{first}</div>
-        <div className={floatDown ? bulma.heroFoot : bulma.heroBody}>{second}</div>
+        <div className={shiftDown ? bulma.heroBody : bulma.heroHead}>{first}</div>
+        <div className={shiftDown ? bulma.heroFoot : bulma.heroBody}>{second}</div>
       </section>
     );
   } else {

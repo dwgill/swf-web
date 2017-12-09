@@ -2,36 +2,30 @@ const steam_or_vanity_id_re = /^[A-Za-z0-9-_]+$/
 const steam_community_re = /^(https?:\/\/)?steamcommunity.com\/(id\/[A-Za-z0-9-_]+|profiles\/[0-9]+)\/?$/
 
 const noInput = (users) => {
-  if (!users || !users.length) {
+  // console.log({users});
+  // console.log(!users);
+  // console.log(!users.length);
+  // console.log(users.every(user => !user));
+  if (!users || !users.length || users.every(user => !user)) {
     return { _error: 'At least one user required' };
+  } else {
+    return null;
   }
 }
 
-const invalidUserValue = (user, required = true) => {
+const invalidUserValue = (user) => {
   if (!user) {
-    if (required) {
-      return 'Required';
-    } else {
-      return null;
-    }
+    return null;
   } else if (!user.match(steam_or_vanity_id_re)
           && !user.match(steam_community_re)) {
-    return 'Invalid user';
+    return 'Invalid user value';
   } else {
     return null;
   }
 };
 
-const invalidUserField = (user, index, users) => {
-  if (index === 0 || index+1 < users.length) {
-    return invalidUserValue(user);
-  } else { // Last user
-    return invalidUserValue(user, false);
-  }
-}
-
-const userEntryValidation = (values) => ({
-  users: noInput(values.users) || values.users.map(invalidUserField),
+const userEntryValidation = (values) => console.log(noInput(values.users)) || ({
+  users: noInput(values.users) || values.users.map(invalidUserValue),
 });
 
 export default userEntryValidation;

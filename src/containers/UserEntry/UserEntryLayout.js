@@ -3,17 +3,25 @@ import Page from '../../components/Page';
 import Banner  from '../../components/Banner';
 import Header from '../../components/Header';
 import EnterUsersForm from '../../forms/EnterUsersForm';
+import styles from './UserEntryLayout.css';
 
 const UserEntryLayout = ({ handleFormSubmission }) => (
   <div>
-    <Banner type="dark">
+    <Banner size='medium' type='info'>
+      <Header
+        size='1'
+        titleText='Steam with Friends'
+        subtitleText='Discover multiplayer games you and your friends own'
+        bold
+      />
+    </Banner>
+    <Page heading={
       <Header
         titleText='Steam with Friends'
         subtitleText='Discover what multiplayer games you and your friends all own'
         size="1"
       />
-    </Banner>
-    <Page>
+    }>
       <EnterUsersForm onSubmit={({users}) => console.log(users.filter(x => x))}/>
     </Page>
   </div>

@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "build": "webpack",
-    "serve": "webpack-dev-server"
+    "build": "webpack --env.NODE_ENV=prod",
+    "serve": "webpack-dev-server --env.NODE_ENV=dev"
   },
   "keywords": [],
   "author": "",
@@ -39,6 +39,7 @@
     "lodash": "^4.17.4",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-icons": "^2.2.7",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",

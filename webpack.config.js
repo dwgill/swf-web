@@ -15,9 +15,10 @@ const VENDOR_LIBS = [
   'redux',
   'redux-form',
   'redux-thunk',
+  // 'react-icons',
 ];
 
-module.exports = {
+module.exports = env => ({
   entry: {
     bundle: path.join(__dirname, 'src/index.js'),
     vendor: VENDOR_LIBS,
@@ -102,4 +103,4 @@ module.exports = {
     compress: false,
     port: 3000,
   }
-};
+});

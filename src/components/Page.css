@@ -1,11 +1,18 @@
-@value bulma 'bulma.css';
-
-.page {
-    composes: section from bulma;
+.backgroundCommon {
+    composes: section from 'bulma.css';
+    min-height: 100vh;
 }
 
-.pageContent {
-    composes: container from bulma;
-    composes: is-widescreen from bulma;
+.backgroundDefault {
+    background-image: url("../assets/ignasi_pattern_s.png");
+    background-repeat: repeat;
 }
 
+.pageCommon {
+    composes: box from 'bulma.css';
+}
+
+.pageDefault {
+    composes: container from 'bulma.css';
+    composes: is-widescreen from 'bulma.css';
+}
