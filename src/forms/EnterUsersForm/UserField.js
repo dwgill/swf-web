@@ -7,7 +7,6 @@ import Icon from '../../components/Icon';
 import customStyles from './UserField.css';
 import colors from '../../colors.css';
 
-
 const styles = {
   ...customStyles,
   control: classnames(bulma.control, bulma.hasIconsLeft),
@@ -21,37 +20,29 @@ const formPlaceholderText = 'steamcommunity.com/...';
 
 const UserField = ({
   input,
-  meta: {
-    touched,
-    pristine,
-    error,
-    invalid,
-    active,
-  }
+  meta: { touched, pristine, error, invalid, active },
 }) => {
   return (
     <div className={bulma.field}>
       <div className={styles.control}>
         <Icon
-          size='l'
+          size="l"
           icon={touched && invalid ? FaUserTimes : FaUser}
           className={styles.fieldIcon}
           color={touched && invalid ? colors.colorDanger : ''}
           left
         />
-        <input {...input}
-          type='text'
-          className={classnames(
-            styles.textInput,
-            {
-              [bulma.isDanger]: touched && invalid,
-              [bulma.isFocus]: active,
-            }
-          )}
+        <input
+          {...input}
+          type="text"
+          className={classnames(styles.textInput, {
+            [bulma.isDanger]: touched && invalid,
+            [bulma.isFocus]: active,
+          })}
           placeholder={formPlaceholderText}
         />
       </div>
-      { touched && invalid && <p className={styles.errorMsg}>{error}</p> }
+      {touched && invalid && <p className={styles.errorMsg}>{error}</p>}
     </div>
   );
 };

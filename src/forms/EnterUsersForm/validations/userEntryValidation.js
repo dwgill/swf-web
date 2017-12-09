@@ -1,7 +1,7 @@
-const steam_or_vanity_id_re = /^[A-Za-z0-9-_]+$/
-const steam_community_re = /^(https?:\/\/)?steamcommunity.com\/(id\/[A-Za-z0-9-_]+|profiles\/[0-9]+)\/?$/
+const steam_or_vanity_id_re = /^[A-Za-z0-9-_]+$/;
+const steam_community_re = /^(https?:\/\/)?steamcommunity.com\/(id\/[A-Za-z0-9-_]+|profiles\/[0-9]+)\/?$/;
 
-const noInput = (users) => {
+const noInput = users => {
   // console.log({users});
   // console.log(!users);
   // console.log(!users.length);
@@ -11,21 +11,24 @@ const noInput = (users) => {
   } else {
     return null;
   }
-}
+};
 
-const invalidUserValue = (user) => {
+const invalidUserValue = user => {
   if (!user) {
     return null;
-  } else if (!user.match(steam_or_vanity_id_re)
-          && !user.match(steam_community_re)) {
+  } else if (
+    !user.match(steam_or_vanity_id_re) &&
+    !user.match(steam_community_re)
+  ) {
     return 'Invalid user value';
   } else {
     return null;
   }
 };
 
-const userEntryValidation = (values) => console.log(noInput(values.users)) || ({
-  users: noInput(values.users) || values.users.map(invalidUserValue),
-});
+const userEntryValidation = values =>
+  console.log(noInput(values.users)) || {
+    users: noInput(values.users) || values.users.map(invalidUserValue),
+  };
 
 export default userEntryValidation;

@@ -17,22 +17,27 @@ const boxSizes = {
   xl: bulma.isLarge,
 };
 
-const Icon = ({size='s', boxSize, left, right, icon, color='', className=''}) => {
+const Icon = ({
+  size = 's',
+  boxSize,
+  left,
+  right,
+  icon,
+  color = '',
+  className = '',
+}) => {
   size = size.toLowerCase();
   boxSize = boxSize || size;
   boxSize = boxSize.toLowerCase();
   const InnerIcon = icon;
 
   return (
-    <div className={classnames(
-      bulma.icon,
-      boxSizes[boxSize],
-      className,
-      {
+    <div
+      className={classnames(bulma.icon, boxSizes[boxSize], className, {
         [bulma.isLeft]: left,
         [bulma.isRight]: right,
-      }
-    )}>
+      })}
+    >
       <InnerIcon size={iconSizes[size]} color={color} />
     </div>
   );

@@ -1,16 +1,12 @@
 import React from 'react';
 import UserEntry from './containers/UserEntry';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-const App = (props) => (
+const App = props => (
   <Router>
     <Switch>
-      <Route path="/" component={UserEntry}/>
+      <Route path="/" component={UserEntry} />
     </Switch>
   </Router>
 );

@@ -11,20 +11,20 @@ const colorClass = {
   danger: bulma.isDanger,
   dark: bulma.isDark,
   light: bulma.isLight,
-}
+};
 
 const sizeClass = {
   medium: bulma.isMedium,
   large: bulma.isLarge,
   fullheight: bulma.isFullheight,
-}
+};
 
 const Banner = ({ children, type = '', size = 'small', bold, shiftDown }) => {
   const bannerClasses = classnames(
     bulma.hero,
     colorClass[type.toLowerCase()],
     sizeClass[size.toLowerCase()],
-    bold ? bulma.isBold : '',
+    bold ? bulma.isBold : ''
   );
 
   if (children.length >= 3) {
@@ -40,8 +40,12 @@ const Banner = ({ children, type = '', size = 'small', bold, shiftDown }) => {
     const [first, second] = children;
     return (
       <section className={bannerClasses}>
-        <div className={shiftDown ? bulma.heroBody : bulma.heroHead}>{first}</div>
-        <div className={shiftDown ? bulma.heroFoot : bulma.heroBody}>{second}</div>
+        <div className={shiftDown ? bulma.heroBody : bulma.heroHead}>
+          {first}
+        </div>
+        <div className={shiftDown ? bulma.heroFoot : bulma.heroBody}>
+          {second}
+        </div>
       </section>
     );
   } else {

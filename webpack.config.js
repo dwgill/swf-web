@@ -31,39 +31,45 @@ module.exports = env => ({
 
   module: {
     rules: [
-      { // babel
+      {
+        // babel
         use: 'babel-loader',
         test: /\.js$/,
         exclude: /node_modules/,
       },
-      { // CSS
+      {
+        // CSS
         test: /\.css$/,
         use: [
-          { // style-loader
-            loader: 'style-loader'
+          {
+            // style-loader
+            loader: 'style-loader',
           },
-          { // css-loader
+          {
+            // css-loader
             loader: 'css-loader',
             options: {
               modules: true,
               localIdentName: '[name]_[local]_[hash:base64:5]',
               importLoaders: 1,
               camelCase: true,
-            }
+            },
           },
-          { // postcss
+          {
+            // postcss
             loader: 'postcss-loader',
             options: {
               ident: 'postcss',
-              plugins: (loader) => [
+              plugins: loader => [
                 require('autoprefixer')(),
                 require('postcss-icss-values')(),
-              ]
-            }
-          }
+              ],
+            },
+          },
         ],
       },
-      { // images
+      {
+        // images
         test: /\.(jpe?g|png|gif|svg)$/,
         use: [
           {
@@ -71,15 +77,15 @@ module.exports = env => ({
             options: { limit: 40000 },
           },
           'image-webpack-loader',
-        ]
-      }
-    ]
+        ],
+      },
+    ],
   },
 
   resolve: {
     alias: {
       ['bulma.css$']: 'bulma/css/bulma.css',
-    }
+    },
   },
 
   plugins: [
@@ -95,12 +101,12 @@ module.exports = env => ({
     // Output index.html w/ refs to built chunks
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/index.html'),
-    })
+    }),
   ],
 
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: false,
     port: 3000,
-  }
+  },
 });
