@@ -15,15 +15,7 @@ const UserEntryLayout = ({ handleFormSubmission }) => (
         bold
       />
     </Banner>
-    <Page
-      heading={
-        <Header
-          titleText="Steam with Friends"
-          subtitleText="Discover what multiplayer games you and your friends all own"
-          size="1"
-        />
-      }
-    >
+    <Page>
       <EnterUsersForm
         onSubmit={({ users }) => console.log(users.filter(x => x))}
       />

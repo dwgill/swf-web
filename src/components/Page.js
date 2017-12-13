@@ -10,7 +10,10 @@ const Page = ({ children, className = '', contentClassName = '' }) => (
     )}
   >
     <div
-      className={classnames(styles.pageCommon, contentClassName || styles.pageDefault)}
+      className={classnames(
+        styles.pageCommon,
+        contentClassName || styles.pageDefault
+      )}
     >
       {children}
     </div>

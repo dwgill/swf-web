@@ -1,6 +1,8 @@
 import React from 'react';
 import UserEntry from './containers/UserEntry';
 
+import './global.css';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = props => (
