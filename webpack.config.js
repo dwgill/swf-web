@@ -20,7 +20,7 @@ const VENDOR_LIBS = [
 
 module.exports = env => ({
   entry: {
-    bundle: path.join(__dirname, 'src/index.js'),
+    bundle: path.join(__dirname, 'src/index.tsx'),
     vendor: VENDOR_LIBS,
   },
 
@@ -32,11 +32,12 @@ module.exports = env => ({
   module: {
     rules: [
       {
-        // babel
-        use: 'babel-loader',
-        test: /\.js$/,
+        // typescript
+        use: 'awesome-typescript-loader',
+        test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
       },
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
         // CSS
         test: /\.css$/,
@@ -87,6 +88,8 @@ module.exports = env => ({
     alias: {
       ['bulma.css$']: 'bulma/css/bulma.css',
     },
+    // changed from extensions: [".js", ".jsx"]
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 
   plugins: [
@@ -115,7 +118,5 @@ module.exports = env => ({
     port: 3000,
   },
 
-  devtool: { production: 'none', development: 'cheap-module-eval-source-map' }[
-    env.NODE_ENV
-  ],
+  devtool: { production: 'none', development: 'source-map' }[env.NODE_ENV],
 });

@@ -1,12 +1,11 @@
-
 .userEntry {
-    display: flex;
-    flex-flow: column nowrap;
-    flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
 }
 
 .page {
-    flex-grow: 1;
-    background-image: url('../../assets/ignasi_pattern_s.png');
-    background-repeat: repeat;
+  flex-grow: 1;
+  background-image: url('../../assets/ignasi_pattern_s.png');
+  background-repeat: repeat;
 }

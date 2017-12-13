@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import UserEntry from './containers/UserEntry';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-const App = props => (
+const App = () => (
   <Router>
     <Switch>
       <Route path="/" component={UserEntry} />

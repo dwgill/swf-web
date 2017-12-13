@@ -10,13 +10,14 @@
     "serve":
       "NODE_ENV=development webpack-dev-server --env.NODE_ENV=development",
     "prettify":
-      "prettier --write \"{,!(node_modules|dist)/**/}!(package-lock)*.{js,jsx,css,json}\""
+      "prettier --write \"{,!(node_modules|dist)/**/}!(package-lock)*.{js,jsx,ts,tsx,css,json}\""
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
+    "awesome-typescript-loader": "^3.4.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
@@ -31,12 +32,23 @@
     "postcss-loader": "^2.0.8",
     "prettier": "^1.9.1",
     "rimraf": "^2.6.2",
+    "source-map-loader": "^0.2.3",
     "style-loader": "^0.19.0",
+    "typescript": "^2.6.2",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.3",
+    "@types/lodash": "^4.14.88",
+    "@types/react": "^16.0.29",
+    "@types/react-dom": "^16.0.3",
+    "@types/react-redux": "^5.0.14",
+    "@types/react-router": "^4.0.19",
+    "@types/react-router-dom": "^4.2.3",
+    "@types/redux-devtools": "^3.0.42",
+    "@types/redux-form": "^7.0.10",
     "axios": "^0.17.1",
     "bulma": "^0.6.1",
     "classnames": "^2.2.5",
