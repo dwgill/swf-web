@@ -6,7 +6,7 @@ import EnterUsersForm from '../../forms/EnterUsersForm';
 import styles from './UserEntryLayout.css';
 
 const UserEntryLayout = ({ handleFormSubmission }) => (
-  <div>
+  <div className={styles.userEntry}>
     <Banner size="medium" type="info">
       <Header
         size="1"
@@ -15,7 +15,7 @@ const UserEntryLayout = ({ handleFormSubmission }) => (
         bold
       />
     </Banner>
-    <Page>
+    <Page className={styles.page}>
       <EnterUsersForm
         onSubmit={({ users }) => console.log(users.filter(x => x))}
       />
