@@ -27,7 +27,6 @@ const Banner = ({
   shiftDown,
   className,
 }) => {
-  console.log(className);
   const bannerClasses = classnames(
     bulma.hero,
     colorClass[type.toLowerCase()],
