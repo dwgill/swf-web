@@ -2,7 +2,7 @@
 .userEntry {
     display: flex;
     flex-flow: column nowrap;
-    min-height: 100vh;
+    flex-grow: 1;
 }
 
 .page {
