@@ -1,11 +1,11 @@
 import React from 'react';
-import bulma from 'bulma.css';
+import bulma from '../../bulma.scss';
 import classnames from 'classnames';
 import { FaUser, FaUserTimes } from 'react-icons/lib/fa';
 import Icon from '../../components/Icon';
 
-import customStyles from './UserField.css';
-import colors from '../../colors.css';
+import customStyles from './UserField.scss';
+import colors from '../../colors.scss';
 
 const styles = {
   ...customStyles,

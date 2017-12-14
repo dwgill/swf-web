@@ -1,11 +1,11 @@
 import React from 'react';
 import { Field } from 'redux-form';
 import classnames from 'classnames';
-import bulma from 'bulma.css';
+import bulma from '../../bulma.scss';
 
 import UserField from './UserField';
 
-import styles from './UsersFields.css';
+import styles from './UsersFields.scss';
 
 const UsersFields = ({ fields, meta: { error, dirty } }) => (
   <ul className={styles.userEntryList} className={styles.userEntryListItem}>

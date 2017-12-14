@@ -7,10 +7,8 @@
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "build": "NODE_ENV=production webpack --env.NODE_ENV=production",
-    "serve":
-      "NODE_ENV=development webpack-dev-server --env.NODE_ENV=development",
-    "prettify":
-      "prettier --write \"{,!(node_modules|dist)/**/}!(package-lock)*.{js,jsx,css,json}\""
+    "serve": "NODE_ENV=development webpack-dev-server --env.NODE_ENV=development",
+    "prettify": "prettier --write \"{,!(node_modules|dist)/**/}!(package-lock)*.{js,jsx,css,json}\""
   },
   "keywords": [],
   "author": "",
@@ -23,14 +21,17 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
+    "node-sass": "^4.7.2",
     "postcss": "^6.0.14",
     "postcss-icss-values": "^2.0.1",
     "postcss-loader": "^2.0.8",
     "prettier": "^1.9.1",
     "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
@@ -39,6 +40,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "bulma": "^0.6.1",
+    "bulmaswatch": "^0.5.2",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "react": "^16.1.1",

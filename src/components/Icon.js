@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
-import bulma from 'bulma.css';
-import styles from './Icon.css';
+import bulma from '../bulma.scss';
+import styles from './Icon.scss';
 
 const iconSizes = {
   s: '1em',

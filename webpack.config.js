@@ -1,10 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const VENDOR_LIBS = [
   'axios',
-  'bulma/css/bulma.css',
+  'bulma/bulma.sass',
   'classnames',
   'lodash',
   'react',
@@ -17,6 +18,11 @@ const VENDOR_LIBS = [
   'redux-thunk',
   // 'react-icons',
 ];
+
+const extractSass = new ExtractTextPlugin({
+  filename: "[name].[contenthash].css",
+  disable: process.env.NODE_ENV === "development"
+});
 
 module.exports = env => ({
   entry: {
@@ -39,35 +45,40 @@ module.exports = env => ({
       },
       {
         // CSS
-        test: /\.css$/,
-        use: [
-          {
-            // style-loader
-            loader: 'style-loader',
-          },
-          {
-            // css-loader
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]_[local]_[hash:base64:5]',
-              importLoaders: 1,
-              camelCase: true,
-              sourceMap: true,
+        test: /\.(scss|sass)$/,
+        use: extractSass.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              // css-loader
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: '[name]_[local]_[hash:base64:5]',
+                importLoaders: 1,
+                camelCase: true,
+                sourceMap: true,
+              },
             },
-          },
-          {
-            // postcss
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: loader => [
-                require('autoprefixer')(),
-                require('postcss-icss-values')(),
-              ],
+            // {
+            //   // postcss
+            //   loader: 'postcss-loader',
+            //   options: {
+            //     ident: 'postcss',
+            //     plugins: loader => [
+            //       require('autoprefixer')(),
+            //       // require('postcss-icss-values')(),
+            //     ],
+            //   },
+            // },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true,
+              }
             },
-          },
-        ],
+          ]
+        }),
       },
       {
         // images
@@ -85,7 +96,8 @@ module.exports = env => ({
 
   resolve: {
     alias: {
-      ['bulma.css$']: 'bulma/css/bulma.css',
+      ['bulma.sass$']: 'bulma.sass/bulma.sass',
+      ['bulma.sass$']: 'bulma/bulma.sass',
     },
   },
 
@@ -107,6 +119,7 @@ module.exports = env => ({
       NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined at compile time
       DEBUG: false,
     }),
+    extractSass,
   ],
 
   devServer: {
@@ -115,7 +128,7 @@ module.exports = env => ({
     port: 3000,
   },
 
-  devtool: { production: 'none', development: 'cheap-module-eval-source-map' }[
+  devtool: { production: 'none', development: 'source-map' }[
     env.NODE_ENV
   ],
 });

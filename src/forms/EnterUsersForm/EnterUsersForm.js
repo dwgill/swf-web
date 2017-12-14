@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, FieldArray, reduxForm, arrayPush } from 'redux-form';
 import classnames from 'classnames';
-import bulma from 'bulma.css';
+import bulma from '../../bulma.scss';
 import { nth, dropRight } from 'lodash';
 
 import UserField from './UserField';

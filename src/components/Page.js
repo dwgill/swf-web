@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import styles from './Page.css';
+import styles from './Page.scss';
 
 const Page = ({ children, className = '', contentClassName = '' }) => (
   <section

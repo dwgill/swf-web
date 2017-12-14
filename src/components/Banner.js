@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import bulma from 'bulma.css';
+import bulma from '../bulma.scss';
 
 const colorClass = {
   primary: bulma.isPrimary,

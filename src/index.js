@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
+import './bulma.scss';
+
 import rootReducer from './reducers';
 import App from './App';
 
