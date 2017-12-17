@@ -7,8 +7,10 @@
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "build": "NODE_ENV=production webpack --env.NODE_ENV=production",
-    "serve": "NODE_ENV=development webpack-dev-server --env.NODE_ENV=development",
-    "prettify": "prettier --write \"{,!(node_modules|dist)/**/}!(package-lock)*.{js,jsx,css,json}\""
+    "serve":
+      "NODE_ENV=development webpack-dev-server --env.NODE_ENV=development",
+    "prettify":
+      "prettier --write \"{,!(node_modules|dist)/**/}!(package-lock)*.{js,jsx,css,json}\""
   },
   "keywords": [],
   "author": "",

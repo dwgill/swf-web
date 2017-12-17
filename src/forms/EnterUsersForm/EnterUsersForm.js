@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, FieldArray, reduxForm, arrayPush } from 'redux-form';
 import classnames from 'classnames';
-import bulma from '../../bulma.scss';
+import styles from './EnterUsersForm.scss';
 import { nth, dropRight } from 'lodash';
 
 import UserField from './UserField';
@@ -41,29 +41,20 @@ const EnterUsersForm = ({
       size={4}
     />
     <FieldArray name={userFieldsArrayName} component={UsersFields} />
-    {anyTouched &&
-      error && (
-        <p className={classnames(bulma.help, bulma.isDanger)}>{error}</p>
-      )}
-    <div
-      className={classnames(
-        bulma.field,
-        bulma.isGrouped,
-        bulma.isGroupedCentered
-      )}
-    >
-      <div className={bulma.control}>
+    {anyTouched && error && <p className={styles.formErrorText}>{error}</p>}
+    <div className={styles.formButtons}>
+      <div className={styles.buttonWrapper}>
         <input
           type="submit"
-          className={classnames(bulma.button, bulma.isLarge, bulma.isDark)}
+          className={styles.submitButton}
           disabled={submitting || pristine}
           value="Submit"
         />
       </div>
-      <div className={bulma.control}>
+      <div className={styles.buttonWrapper}>
         <input
           type="reset"
-          className={classnames(bulma.button, bulma.isLarge)}
+          className={styles.button}
           disabled={submitting}
           onClick={reset}
           value="Reset"

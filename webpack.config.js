@@ -1,11 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const VENDOR_LIBS = [
   'axios',
-  'bulma/bulma.sass',
   'classnames',
   'lodash',
   'react',
@@ -16,12 +15,11 @@ const VENDOR_LIBS = [
   'redux',
   'redux-form',
   'redux-thunk',
-  // 'react-icons',
 ];
 
 const extractSass = new ExtractTextPlugin({
-  filename: "[name].[contenthash].css",
-  disable: process.env.NODE_ENV === "development"
+  filename: '[name].[contenthash].css',
+  disable: process.env.NODE_ENV === 'development',
 });
 
 module.exports = env => ({
@@ -55,29 +53,30 @@ module.exports = env => ({
               options: {
                 modules: true,
                 localIdentName: '[name]_[local]_[hash:base64:5]',
-                importLoaders: 1,
+                importLoaders: 2,
                 camelCase: true,
                 sourceMap: true,
               },
             },
-            // {
-            //   // postcss
-            //   loader: 'postcss-loader',
-            //   options: {
-            //     ident: 'postcss',
-            //     plugins: loader => [
-            //       require('autoprefixer')(),
-            //       // require('postcss-icss-values')(),
-            //     ],
-            //   },
-            // },
+            {
+              // postcss
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: loader => [
+                  require('autoprefixer')(),
+                  require('postcss-icss-values')(),
+                ],
+                sourceMap: true,
+              },
+            },
             {
               loader: 'sass-loader',
               options: {
                 sourceMap: true,
-              }
+              },
             },
-          ]
+          ],
         }),
       },
       {
@@ -95,10 +94,7 @@ module.exports = env => ({
   },
 
   resolve: {
-    alias: {
-      ['bulma.sass$']: 'bulma.sass/bulma.sass',
-      ['bulma.sass$']: 'bulma/bulma.sass',
-    },
+    alias: {},
   },
 
   plugins: [
@@ -128,7 +124,5 @@ module.exports = env => ({
     port: 3000,
   },
 
-  devtool: { production: 'none', development: 'source-map' }[
-    env.NODE_ENV
-  ],
+  devtool: { production: 'none', development: 'source-map' }[env.NODE_ENV],
 });

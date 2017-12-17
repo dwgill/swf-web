@@ -1,6 +1,5 @@
 import React from 'react';
 import classnames from 'classnames';
-import bulma from '../bulma.scss';
 import styles from './Icon.scss';
 
 const iconSizes = {
@@ -11,10 +10,10 @@ const iconSizes = {
 };
 
 const boxSizes = {
-  s: bulma.isSmall,
+  s: styles.iconBoxSizeSmall,
   m: null,
-  l: bulma.isMedium,
-  xl: bulma.isLarge,
+  l: styles.iconBoxSizeLarge,
+  xl: styles.iconBoxSizeExtraLarge,
 };
 
 const Icon = ({
@@ -33,9 +32,9 @@ const Icon = ({
 
   return (
     <div
-      className={classnames(bulma.icon, boxSizes[boxSize], className, {
-        [bulma.isLeft]: left,
-        [bulma.isRight]: right,
+      className={classnames(styles.iconBox, boxSizes[boxSize], className, {
+        [styles.left]: left,
+        [styles.right]: right,
       })}
     >
       <InnerIcon size={iconSizes[size]} color={color} />

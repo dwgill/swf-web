@@ -1,0 +1,22 @@
+$bulma: '../bulma.scss';
+
+.common { composes: hero from $bulma; }
+
+.colorPrimary { composes: is-primary from $bulma; }
+.colorLink { composes: is-link from $bulma; }
+.colorInfo { composes: is-info from $bulma; }
+.colorSuccess { composes: is-success from $bulma; }
+.colorWarning { composes: is-warning from $bulma; }
+.colorDanger { composes: is-danger from $bulma; }
+.colorDark { composes: is-dark from $bulma; }
+.colorLight { composes: is-light from $bulma; }
+
+.sizeMedium { composes: is-medium from $bulma; } 
+.sizeLarge { composes: is-large from $bulma; }
+.sizeFullHeight { composes: is-full-height from $bulma; } 
+
+.bold { composes: is-bold from $bulma; }
+
+.body { composes: hero-body from $bulma; }
+.head { composes: hero-head from $bulma; }
+.foot { composes: hero-foot from $bulma; }

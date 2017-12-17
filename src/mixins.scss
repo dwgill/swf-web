@@ -1,0 +1,11 @@
+@mixin from($width) {
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin until($width) {
+    @media screen and (max-width: $width - 1px) {
+        @content;
+    }
+}

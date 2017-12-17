@@ -1,7 +1,34 @@
+$bulma: '../../bulma.scss';
+
 .userEntryListItem:not(:last-child) {
   margin-bottom: 0.75rem;
 }
 
 .userEntryList {
   margin-bottom: 0.75rem;
+}
+
+.formErrorText {
+  composes: help from $bulma;
+  composes: is-danger from $bulma;
+}
+
+.formButtons {
+  composes: field from $bulma;
+  composes: is-grouped from $bulma;
+  composes: is-grouped-centered from $bulma;
+}
+
+.buttonWrapper {
+  composes: control from $bulma;
+}
+
+.button  {
+  composes: button from $bulma;
+  composes: is-large from $bulma;
+}
+
+.submitButton {
+  composes: button;
+  composes: is-dark from $bulma;
 }

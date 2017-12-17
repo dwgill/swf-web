@@ -1,3 +1,33 @@
+$bulma: '../../bulma.scss';
+@value colorDanger from '../../bulma.scss';
+
 .fieldIcon {
   top: 10% !important;
+}
+
+.field {
+  composes: control from $bulma;
+  composes: has-icons-left from $bulma;
+}
+
+.fieldContainer { composes: field from $bulma; }
+
+.errorMsg {
+  composes: help from $bulma;
+  composes: is-danger from $bulma;
+}
+
+@value errorMsgColor colorDanger;
+
+.fieldInput {
+  composes: input from $bulma;
+  composes: is-medium from $bulma;
+}
+
+.fieldInputError {
+  composes: is-danger from $bulma;
+}
+
+.fieldInputFocus {
+  composes: is-focus from $bulma;
 }

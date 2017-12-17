@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
 import classnames from 'classnames';
-import bulma from '../../bulma.scss';
 
 import UserField from './UserField';
 
@@ -12,7 +11,7 @@ const UsersFields = ({ fields, meta: { error, dirty } }) => (
     {error &&
       dirty && (
         <li key="error" className={styles.userEntryListItem}>
-          <p className={classnames(bulma.help, bulma.isDanger)}>{error}</p>
+          <p className={styles.errorText}>{error}</p>
         </li>
       )}
     {fields.map((user, index) => (
