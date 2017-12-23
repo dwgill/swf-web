@@ -10,7 +10,7 @@
     "serve":
       "NODE_ENV=development webpack-dev-server --env.NODE_ENV=development",
     "prettify":
-      "prettier --write \"{,!(node_modules|dist)/**/}!(package-lock)*.{js,jsx,css,json}\""
+      "prettier --write \"{,!(node_modules|dist)/**/}!(package-lock)*.{js,jsx,scss,json}\""
   },
   "keywords": [],
   "author": "",
@@ -45,12 +45,13 @@
     "bulmaswatch": "^0.5.2",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
-    "react": "^16.1.1",
+    "react": "^16.2.0",
     "react-dom": "^16.1.1",
     "react-icons": "^2.2.7",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-form": "^7.1.2",
     "redux-thunk": "^2.2.0"

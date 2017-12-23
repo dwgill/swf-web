@@ -6,13 +6,13 @@ const Page = ({ children, className = '', contentClassName = '' }) => (
   <section
     className={classnames(
       styles.backgroundCommon,
-      className || styles.backgroundDefault
+      className || styles.backgroundDefault,
     )}
   >
     <div
       className={classnames(
         styles.pageCommon,
-        contentClassName || styles.pageDefault
+        contentClassName || styles.pageDefault,
       )}
     >
       {children}

@@ -10,7 +10,9 @@ $bulma: '../../bulma.scss';
   composes: has-icons-left from $bulma;
 }
 
-.fieldContainer { composes: field from $bulma; }
+.fieldContainer {
+  composes: field from $bulma;
+}
 
 .errorMsg {
   composes: help from $bulma;

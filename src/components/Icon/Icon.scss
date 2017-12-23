@@ -1,0 +1,21 @@
+$bulma: '../../bulma.scss';
+
+.iconBox {
+  composes: icon from $bulma;
+}
+.left {
+  composes: is-left from $bulma;
+}
+.right {
+  composes: is-right from $bulma;
+}
+
+.iconBoxSizeSmall {
+  composes: is-small from $bulma;
+}
+.iconBoxSizeLarge {
+  composes: is-medium from $bulma;
+}
+.iconBoxSizeExtraLarge {
+  composes: is-large from $bulma;
+}

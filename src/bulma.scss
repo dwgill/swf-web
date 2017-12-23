@@ -1,35 +1,38 @@
-@import "~bulmaswatch/yeti/_variables.scss";
-@import "~bulma/bulma.sass";
-@import "~bulmaswatch/yeti/_overrides.scss";
+@import '~bulmaswatch/yeti/_variables.scss';
+// Overrides
+$navbar-item-img-max-height: 2.375rem;
+
+@import '~bulma/bulma.sass';
+@import '~bulmaswatch/yeti/_overrides.scss';
 
 // PostCSS values so these can be exported into JS
 // There are more exportable variables at
 // https://github.com/jgthms/bulma/blob/master/sass/utilities/derived-variables.sass
 :export {
-    // Principal Colors
-    colorPrimary: $primary;
-    colorPrimaryInvert: $primary-invert;
-    colorLink: $link;
-    colorLinkInvert: $link-invert;
-    colorInfo: $info;
-    colorInfoInvert: $info-invert;
-    colorSuccess: $success;
-    colorSuccessInvert: $success-invert;
-    colorWarning: $warning;
-    colorWarningInvert: $warning-invert;
-    colorDanger: $danger;
-    colorDangerInvert: $danger-invert;
-    colorLight: $light;
-    colorLightInvert: $light-invert;
-    colorDark: $dark;
-    colorDarkInvert: $dark-invert;
+  // Principal Colors
+  color_primary: $primary;
+  color_primaryinvert: $primary-invert;
+  color_link: $link;
+  color_linkinvert: $link-invert;
+  color_info: $info;
+  color_infoinvert: $info-invert;
+  color_success: $success;
+  color_successinvert: $success-invert;
+  color_warning: $warning;
+  color_warninginvert: $warning-invert;
+  color_danger: $danger;
+  color_dangerinvert: $danger-invert;
+  color_light: $light;
+  color_lightinvert: $light-invert;
+  color_dark: $dark;
+  color_darkinvert: $dark-invert;
 
-    colorBackground: $background;
+  color_background: $background;
 
-    // Sizes
-    sizeTablet: $tablet;
-    sizeDesktop: $desktop;
-    sizeWidescreen: $widescreen;
-    sizeFullhd: $fullhd;
-    sizeGap: $gap;
+  // Sizes
+  size_tablet: $tablet;
+  size_desktop: $desktop;
+  size_widescreen: $widescreen;
+  size_fullhd: $fullhd;
+  size_gap: $gap;
 }

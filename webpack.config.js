@@ -116,7 +116,8 @@ module.exports = env => ({
       DEBUG: false,
     }),
     extractSass,
-  ],
+    env.NODE_ENV == 'production' ? new webpack.optimize.UglifyJsPlugin() : null,
+  ].filter(x => x !== null),
 
   devServer: {
     contentBase: path.join(__dirname, 'dist'),

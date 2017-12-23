@@ -1,0 +1,27 @@
+$bulma: '../../bulma.scss';
+
+.title {
+  composes: title from $bulma;
+}
+.subtitle {
+  composes: subtitle from $bulma;
+}
+
+.is1 {
+  composes: is-1 from $bulma;
+}
+.is2 {
+  composes: is-2 from $bulma;
+}
+.is3 {
+  composes: is-3 from $bulma;
+}
+.is4 {
+  composes: is-4 from $bulma;
+}
+.is5 {
+  composes: is-5 from $bulma;
+}
+.is6 {
+  composes: is-6 from $bulma;
+}

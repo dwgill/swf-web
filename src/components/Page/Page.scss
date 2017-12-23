@@ -1,0 +1,19 @@
+$bulma: '../../bulma.scss';
+
+.backgroundCommon {
+  composes: section from $bulma;
+}
+
+.backgroundDefault {
+  background-image: url('../../assets/ignasi_pattern_s.png');
+  background-repeat: repeat;
+}
+
+.pageCommon {
+  composes: box from $bulma;
+}
+
+.pageDefault {
+  composes: container from $bulma;
+  composes: is-widescreen from $bulma;
+}

@@ -1,27 +1,28 @@
 $bulma: '../../bulma.scss';
 @import '../../mixins.scss';
-@value sizeTablet from '../../bulma.scss';
+@value size_tablet from '../../bulma.scss';
 
 .banner {
-    background-repeat: no-repeat;
-    background-position: right 25%;
-    @include from(sizeTablet) {
-        background-image: url('../../assets/swf-party.svg');
-        background-size: 33%; // 1/3
-    }
-    @include until(sizeTablet) {
-        background-image: none;
-    }
-    composes: box from $bulma;
-    composes: is-paddingless from $bulma;
-    composes: is-marginless from $bulma;
+  background-repeat: no-repeat;
+  background-position: right 25%;
+  @include from(size_tablet) {
+    background-color: red;
+    background-image: url('../../assets/swf-party.svg');
+    background-size: 33%; // 1/3
+  }
+  @include until(size_tablet) {
+    background-image: none;
+  }
+  // composes: box from $bulma;
+  composes: is-paddingless from $bulma;
+  composes: is-marginless from $bulma;
 }
 
 .bannerBody {
-    composes: columns from $bulma;
+  composes: columns from $bulma;
 }
 
 .header {
-    composes: column from $bulma;
-    composes: is-two-thirds from $bulma;
+  composes: column from $bulma;
+  composes: is-two-thirds from $bulma;
 }

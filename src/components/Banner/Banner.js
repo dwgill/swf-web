@@ -32,7 +32,7 @@ const Banner = ({
     colorClass[type.toLowerCase()],
     sizeClass[size.toLowerCase()],
     bold ? styles.bold : '',
-    className
+    className,
   );
 
   if (children.length >= 3) {

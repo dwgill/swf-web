@@ -1,0 +1,49 @@
+$bulma: '../../bulma.scss';
+
+.navigation {
+  composes: navbar from $bulma;
+}
+
+.navBrand {
+  composes: navbar-brand from $bulma;
+}
+
+.navButtton {
+  composes: button from $bulma;
+  composes: navbar-burger from $bulma;
+  composes: is-primary from $bulma;
+  border: 0;
+}
+
+.navItem {
+  composes: navbar-item from $bulma;
+}
+
+.logoBox {
+  composes: navItem;
+  padding-left: 0.5rem;
+}
+
+.logo {
+  composes: image from $bulma;
+  // composes: is-48x48 from $bulma;
+  // composes: is-square from $bulma;
+  // composes: is-paddingless from $bulma;
+}
+
+.navMenu {
+  composes: navbar-menu from $bulma;
+}
+
+.navMenuActive {
+  composes: navMenu;
+  composes: is-active from $bulma;
+}
+
+.navMenuLeft {
+  composes: navbar-start from $bulma;
+}
+
+.navMenuRight {
+  composes: navbar-end from $bulma;
+}

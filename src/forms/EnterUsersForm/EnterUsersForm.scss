@@ -23,7 +23,7 @@ $bulma: '../../bulma.scss';
   composes: control from $bulma;
 }
 
-.button  {
+.button {
   composes: button from $bulma;
   composes: is-large from $bulma;
 }
